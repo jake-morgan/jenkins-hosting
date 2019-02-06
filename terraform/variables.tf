@@ -29,17 +29,17 @@ variable "prefix" {
 
 variable "os_publisher" {
   type    = "string"
-  default = "OpenLogic"
+  default = "Canonical"
 }
 
 variable "os_sku" {
   type    = "string"
-  default = "7.5"
+  default = "18.04-LTS"
 }
 
 variable "os_offer" {
   type    = "string"
-  default = "CentOS"
+  default = "UbuntuServer"
 }
 
 variable "os_version" {

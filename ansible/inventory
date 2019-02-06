@@ -1,0 +1,2 @@
+[webservers]
+jenkins.jakemorgan.io ansible_user=jake ansible_ssh_private_key_file=~/.ssh/penberi

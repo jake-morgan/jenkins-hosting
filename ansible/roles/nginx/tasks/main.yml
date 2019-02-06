@@ -1,0 +1,16 @@
+---
+- name: install nginx
+  apt:
+    name: nginx
+    state: latest
+    update_cache: yes
+  notify: start nginx
+
+- name: add site config
+  copy:
+    src: jenkins.jakemorgan.io.conf
+    dest: /etc/nginx/sites-enabled/jakemorgan.io.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart nginx
