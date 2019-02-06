@@ -1,0 +1,16 @@
+# OS and config files
+*.DS_Store
+.vscode/
+
+# Keys
+.ssh/
+*.pub
+penberi
+
+# Backend config files
+backend.tfvars
+
+# Terraform files
+.terraform/
+*.tfstate*
+*.tfplan
