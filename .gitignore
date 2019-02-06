@@ -14,3 +14,6 @@ backend.tfvars
 .terraform/
 *.tfstate*
 *.tfplan
+
+# Ansible files
+*inventory*
