@@ -1,2 +1,21 @@
 ---
-# tasks file for jenkins
+- name: install java
+  apt:
+    name: openjdk-8-jdk
+    update_cache: yes
+    state: latest
+
+- name: add repository key
+  shell: wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | apt-key add -
+  args:
+    warn: false
+
+- name: add repository address to sources
+  shell: sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+
+- name: install jenkins
+  apt:
+    name: jenkins
+    update_cache: yes
+    state: latest
+  notify: start jenkins

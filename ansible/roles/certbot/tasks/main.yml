@@ -7,7 +7,7 @@
 
 - name: add universe repository
   apt_repository:
-    repo: universe
+    repo: deb http://archive.ubuntu.com/ubuntu bionic universe
 
 - name: add certbot repository
   apt_repository:
@@ -23,10 +23,3 @@
   apt:
     name: python-certbot-nginx
     state: latest
-
-# $ sudo apt-get update
-# $ sudo apt-get install software-properties-common
-# $ sudo add-apt-repository universe
-# $ sudo add-apt-repository ppa:certbot/certbot
-# $ sudo apt-get update
-# $ sudo apt-get install certbot python-certbot-nginx

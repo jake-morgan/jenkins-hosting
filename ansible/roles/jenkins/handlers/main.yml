@@ -1,2 +1,5 @@
 ---
-# handlers file for jenkins
+- name: start jenkins
+  service:
+    name: jenkins
+    state: started
