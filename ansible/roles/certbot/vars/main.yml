@@ -1,2 +1,4 @@
 ---
 # vars file for certbot
+domains: jenkins.jakemorgan.io
+email: "{{ lookup('file', '~/.ssh/personal-email') }}"

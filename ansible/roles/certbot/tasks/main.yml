@@ -23,3 +23,6 @@
   apt:
     name: python-certbot-nginx
     state: latest
+
+- name: get certificates
+  shell: certbot --nginx -n -m {{email}} --agree-tos --redirect --domains {{domains}}
