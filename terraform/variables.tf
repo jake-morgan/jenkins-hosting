@@ -66,3 +66,8 @@ variable "domain_name" {
   type    = "string"
   default = "jakemorgan.io"
 }
+
+variable "jenkins_ssh_port" {
+  type    = "string"
+  default = "PORT"
+}

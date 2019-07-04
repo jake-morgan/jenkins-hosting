@@ -1,0 +1,6 @@
+---
+# handlers file for dockerce
+- name: apt update
+  apt:
+    upgrade: yes
+    update_cache: yes
