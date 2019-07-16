@@ -6,10 +6,10 @@ resource "azurerm_virtual_network" "main" {
 }
 
 resource "azurerm_public_ip" "main" {
-  name                         = "${var.prefix}-pub-ip"
-  resource_group_name          = "${azurerm_resource_group.main.name}"
-  location                     = "${var.location}"
-  public_ip_address_allocation = "Dynamic"
+  name                = "${var.prefix}-pub-ip"
+  resource_group_name = "${azurerm_resource_group.main.name}"
+  location            = "${var.location}"
+  allocation_method   = "Static"
 }
 
 resource "azurerm_subnet" "internal" {

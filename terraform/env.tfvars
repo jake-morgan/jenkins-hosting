@@ -1,8 +1,8 @@
-rg_name = "penberi-rg"
+rg_name = "jenkins-jakemorgan-io"
 
 location = "North Europe"
 
-prefix = "penberi"
+prefix = "jenkins"
 
 admin_username = "jake"
 
