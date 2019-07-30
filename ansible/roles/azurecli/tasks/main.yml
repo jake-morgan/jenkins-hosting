@@ -1,0 +1,4 @@
+---
+# tasks file for azurecli
+- name: install azure cli
+  shell: curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
