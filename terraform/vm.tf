@@ -49,3 +49,19 @@ resource "azurerm_virtual_machine" "main" {
   delete_data_disks_on_termination = true
   delete_os_disk_on_termination    = true
 }
+
+resource "azurerm_managed_disk" "main" {
+  name                 = "${var.prefix}-disk1"
+  location             = "${var.location}"
+  resource_group_name  = "${azurerm_resource_group.main.name}"
+  storage_account_type = "Standard_LRS"
+  create_option        = "Empty"
+  disk_size_gb         = 1000
+}
+
+resource "azurerm_virtual_machine_data_disk_attachment" "main" {
+  managed_disk_id    = "${azurerm_managed_disk.main.id}"
+  virtual_machine_id = "${azurerm_virtual_machine.main.id}"
+  lun                = "10"
+  caching            = "ReadWrite"
+}

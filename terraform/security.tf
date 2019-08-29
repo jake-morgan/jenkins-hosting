@@ -18,6 +18,20 @@ resource "azurerm_network_security_rule" "ssh_inbound" {
   network_security_group_name = "${azurerm_network_security_group.main.name}"
 }
 
+resource "azurerm_network_security_rule" "ssh_outbound" {
+  name                        = "ssh-sg"
+  priority                    = 201
+  direction                   = "Outbound"
+  access                      = "Allow"
+  protocol                    = "Tcp"
+  source_port_range           = "*"
+  destination_port_range      = "22"
+  source_address_prefix       = "*"
+  destination_address_prefix  = "*"
+  resource_group_name         = "${azurerm_resource_group.main.name}"
+  network_security_group_name = "${azurerm_network_security_group.main.name}"
+}
+
 resource "azurerm_network_security_rule" "ftp_20_inbound" {
   name                        = "ftp-20-in-sg"
   priority                    = 202
