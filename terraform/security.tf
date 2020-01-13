@@ -5,7 +5,7 @@ resource "azurerm_network_security_group" "main" {
 }
 
 resource "azurerm_network_security_rule" "ssh_inbound" {
-  name                        = "ssh-sg"
+  name                        = "ssh-in"
   priority                    = 201
   direction                   = "Inbound"
   access                      = "Allow"
@@ -19,7 +19,7 @@ resource "azurerm_network_security_rule" "ssh_inbound" {
 }
 
 resource "azurerm_network_security_rule" "ssh_outbound" {
-  name                        = "ssh-sg"
+  name                        = "ssh-out"
   priority                    = 201
   direction                   = "Outbound"
   access                      = "Allow"
@@ -166,34 +166,6 @@ resource "azurerm_network_security_rule" "jenkins_ssh_inbound" {
   protocol                    = "*"
   source_port_range           = "*"
   destination_port_range      = "${var.jenkins_ssh_port}"
-  source_address_prefix       = "*"
-  destination_address_prefix  = "*"
-  resource_group_name         = "${azurerm_resource_group.main.name}"
-  network_security_group_name = "${azurerm_network_security_group.main.name}"
-}
-
-resource "azurerm_network_security_rule" "deny_all_inbound" {
-  name                        = "deny-in"
-  priority                    = 1000
-  direction                   = "Inbound"
-  access                      = "Deny"
-  protocol                    = "*"
-  source_port_range           = "*"
-  destination_port_range      = "*"
-  source_address_prefix       = "*"
-  destination_address_prefix  = "*"
-  resource_group_name         = "${azurerm_resource_group.main.name}"
-  network_security_group_name = "${azurerm_network_security_group.main.name}"
-}
-
-resource "azurerm_network_security_rule" "deny_all_outbound" {
-  name                        = "deny-out"
-  priority                    = 1000
-  direction                   = "Outbound"
-  access                      = "Deny"
-  protocol                    = "*"
-  source_port_range           = "*"
-  destination_port_range      = "*"
   source_address_prefix       = "*"
   destination_address_prefix  = "*"
   resource_group_name         = "${azurerm_resource_group.main.name}"

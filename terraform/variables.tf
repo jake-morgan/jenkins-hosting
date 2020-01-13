@@ -64,7 +64,7 @@ variable "os_disk_managed_disk_type" {
 
 variable "domain_name" {
   type    = "string"
-  default = "jakemorgan.io"
+  default = "morganj.co.uk"
 }
 
 variable "jenkins_ssh_port" {

@@ -8,8 +8,8 @@
 
 - name: add site config
   copy:
-    src: jenkins.jakemorgan.io.conf
-    dest: /etc/nginx/sites-enabled/jakemorgan.io.conf
+    src: jenkins.morganj.co.uk.conf
+    dest: /etc/nginx/sites-enabled/jenkins.morganj.co.uk.conf
     owner: root
     group: root
     mode: 0644
