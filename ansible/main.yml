@@ -2,6 +2,7 @@
 - hosts: webservers
   become: yes
   roles:
+    - robertdebock.python_pip
     - jenkins
     - nginx
     - certbot

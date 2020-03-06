@@ -15,12 +15,12 @@
   notify: apt update
 
 - name: install certbot
-  apt:
+  package:
     name: certbot
     state: latest
 
 - name: install certbot nginx
-  apt:
+  package:
     name: python-certbot-nginx
     state: latest
 
